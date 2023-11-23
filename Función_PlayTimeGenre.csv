@@ -1,23 +1,25 @@
-Género,Año
-Action,2012
-Adventure,2011
-Animation & Modeling,2015
-Audio Production,2014
-Casual,2015
-Design & Illustration,2012
-Early Access,2013
-Education,2013
-Free to Play,2013
-Indie,2006
-Massively Multiplayer,2013
-N/D,N/D
-Photo Editing,2014
-RPG,2011
-Racing,2015
-Simulation,2006
-Software Training,2014
-Sports,2015
-Strategy,N/D
-Utilities,2014
-Video Production,2015
-Web Publishing,2012
+Año,Horas_jugadas,Género
+2016,0,Accounting
+2012,1085700047,Action
+2011,221804836,Adventure
+2015,1345913,Animation & Modeling
+2014,455463,Audio Production
+2015,83950877,Casual
+2012,1930339,Design & Illustration
+2013,118902893,Early Access
+2013,340567,Education
+2013,189185785,Free to Play
+2015,3588,Game Development
+2006,446115272,Indie
+2013,176348445,Massively Multiplayer
+N/D,583513105,N/D
+2014,61659,Photo Editing
+2011,227883593,RPG
+2015,39063164,Racing
+2006,444536391,Simulation
+2014,533535,Software Training
+2015,42861419,Sports
+2013,145471060,Strategy
+2014,2832533,Utilities
+2015,1719365,Video Production
+2012,1930339,Web Publishing
