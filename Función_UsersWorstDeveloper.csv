@@ -1,14 +1,14 @@
-,Año_review,Desarrollador,count
-0,2015-01-01,Valve,14
-1,2015-01-01,OVERKILL - a Starbreeze Studio.,9
-2,2015-01-01,Facepunch Studios,7
-0,2016-01-01,Valve,17
-1,2016-01-01,Hello Games,10
-2,2016-01-01,Bohemia Interactive,6
-0,2013-01-01,Infinity Ward,3
-1,2013-01-01,Valve,2
-2,2013-01-01,Lukewarm Media,1
-0,2014-01-01,Valve,11
-1,2014-01-01,Bohemia Interactive,9
-2,2014-01-01,Edge of Reality,6
-0,2012-01-01,Valve,1
+Año_review,Desarrollador,count
+2015,Valve,14
+2015,OVERKILL - a Starbreeze Studio.,9
+2015,Facepunch Studios,7
+2016,Valve,17
+2016,Hello Games,10
+2016,Bohemia Interactive,6
+2013,Infinity Ward,3
+2013,Valve,2
+2013,Lukewarm Media,1
+2014,Valve,11
+2014,Bohemia Interactive,9
+2014,Edge of Reality,6
+2012,Valve,1
