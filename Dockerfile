@@ -5,16 +5,16 @@ FROM python:3.11.6
 WORKDIR /app
 
 # Copia el archivo de requisitos al contenedor
-COPY requirements.txt .
+COPY requirements.txt ./requirements.txt
 
 # Instala las dependencias
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install -r requirements.txt
 
 # Copia el contenido actual al contenedor en /app
-COPY . .
+COPY ..
 
 # Expone el puerto en el que la aplicación va a estar escuchando
-EXPOSE 8000
+EXPOSE 80
 
 # Comando para ejecutar la aplicación cuando el contenedor se inicie
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "80"]
