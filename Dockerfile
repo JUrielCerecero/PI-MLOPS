@@ -11,7 +11,7 @@ COPY requirements.txt ./requirements.txt
 RUN pip install -r requirements.txt
 
 # Copia el contenido actual al contenedor en /app
-COPY ..
+COPY . .
 
 # Expone el puerto en el que la aplicación va a estar escuchando
 EXPOSE 80
