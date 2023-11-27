@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 import pandas as pd
+from sklearn.metrics.pairwise import cosine_similarity
 
 app = FastAPI()
 
@@ -9,7 +10,7 @@ dff2=pd.read_csv('Función_UserForGenre.csv')
 dff3=pd.read_csv('Función_UsersRecommend.csv')
 dff4=pd.read_csv('Función_UsersWorstDeveloper.csv')
 dff5=pd.read_csv('Función_sentiment_analysis.csv')
-dff6=pd.read_csv('consulta_modelo1.csv')
+dff6=pd.read_csv('consulta_modelo2.csv')
 #creamos listas con datos de años, generos,y desarrollador para cada función
 listaf1=dff1.Género.unique().tolist()
 listaf2=dff2.Género.unique().tolist()
@@ -38,12 +39,12 @@ def bienvenido():
 
 @app.get("/PlayTimeGenre/")
 def Playtiemgenre():
-    """
-    Ruta para obtener la lista de géneros disponibles.
+
+    """Ruta para obtener la lista de géneros disponibles.
 
     Returns:
         str: Mensaje indicando que se debe ingresar un género válido.
-    """
+    """ 
     return f'Ingrese en la barra de navegación al final del url el género buscado   --(devuelve el año con mas horas jugadas para dicho género.)      Por favor ingrese un género válido de la siguiente lista:{listaf1}'
 
 @app.get("/PlayTimeGenre/{genero}")
@@ -57,11 +58,12 @@ def PlayTimeGenre(genero : str ):
     Returns:
         dict: Diccionario con el año de lanzamiento con más horas jugadas para el género.
     """
+       
     dict={}
     genero=genero.capitalize()
     if genero not in listaf1:
         return f'(Por favor ingrese un género válido de la siguiente lista:{listaf1}'
-    mensaje="Año de lanzamiento con más horas jugadas para Género "+genero
+    mensaje="Año de lanzamiento con más horas jugadas para Género " + genero
     dict[mensaje]=dff1.Año_lanzamiento[dff1['Género']==genero].iloc[0]
     return dict
 
@@ -214,7 +216,27 @@ def recomendacion_juego( id_de_producto : int):
     Returns:
         list: Lista con 5 juegos recomendados similares.
     """    
-    if id_de_producto not in listaf6[0]['Id_juego'].to_list():
-        l=[('Id: ',dff6.Id_juego[a],'Nombre: ',dff6.Nombre[a]) for a in range(len(dff6[['Id_juego','Nombre']]))]
-        return f'por favor ingrese un id de las siguiente lista:    {l}'
-    return dff6.juegos[dff6.Id_juego==id_de_producto]
+    X=dff6.Género.str.get_dummies(', ')
+    similitud = cosine_similarity(X)
+    similitudes=pd.DataFrame(similitud,index=dff6.Id_juego,columns=dff6.Id_juego)
+    def __nombres__(id):
+        nombres=similitudes.loc[id].nlargest(6)[1:6].index.to_list()
+        l=dff6['Nombre'][dff6['Id_juego'].isin(__nombres__)].to_list()
+        return l
+    return f'5 juegos recomendados para el id: {id_de_producto} {__nombres__(id_de_producto)}'
+
+#@app.get("/recomendacion_juego/{id_de_producto}")
+#def recomendacion_juego( id_de_producto : int):
+    """
+    Ruta para obtener una lista de 5 juegos recomendados similares al juego ingresado.
+
+    Args:
+        id_de_producto (int): ID del juego para el cual se busca la información.
+
+    Returns:
+        list: Lista con 5 juegos recomendados similares.
+    """    
+    #if id_de_producto not in listaf6[0]['Id_juego'].to_list():
+        #l=[('Id: ',dff6.Id_juego[a],'Nombre: ',dff6.Nombre[a]) for a in range(len(dff6[['Id_juego','Nombre']]))]
+        #return f'por favor ingrese un id de las siguiente lista:    {l}'
+    #return dff6.juegos[dff6.Id_juego==id_de_producto]
