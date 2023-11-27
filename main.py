@@ -10,7 +10,7 @@ dff2=pd.read_csv('Función_UserForGenre.csv')
 dff3=pd.read_csv('Función_UsersRecommend.csv')
 dff4=pd.read_csv('Función_UsersWorstDeveloper.csv')
 dff5=pd.read_csv('Función_sentiment_analysis.csv')
-dff6=pd.read_csv('consulta_modelo2.csv')
+dff6=pd.read_csv('consulta_modelo1.csv')
 #creamos listas con datos de años, generos,y desarrollador para cada función
 listaf1=dff1.Género.unique().tolist()
 listaf2=dff2.Género.unique().tolist()
@@ -217,29 +217,6 @@ def recomendacion_juego( id_de_producto : int):
         list: Lista con 5 juegos recomendados similares.
     """    
     if id_de_producto not in listaf6[0]['Id_juego'].to_list():
-        l=listaf6[0]['Id_juego'].to_list()
-        return f'Por favor ingrese un id de las siguiente lista:{l}'
-    X=dff6.Género.str.get_dummies(', ')
-    similitud = cosine_similarity(X)
-    similitudes=pd.DataFrame(similitud,index=dff6.Id_juego,columns=dff6.Id_juego)
-    def __nombres__(id):
-        nombres=similitudes.loc[id].nlargest(6)[1:6].index.to_list()
-        l=dff6['Nombre'][dff6['Id_juego'].isin(__nombres__)].to_list()
-        return l
-    return f'5 juegos recomendados para el id: {id_de_producto} {__nombres__(id_de_producto)}'
-
-#@app.get("/recomendacion_juego/{id_de_producto}")
-#def recomendacion_juego( id_de_producto : int):
-    """
-    Ruta para obtener una lista de 5 juegos recomendados similares al juego ingresado.
-
-    Args:
-        id_de_producto (int): ID del juego para el cual se busca la información.
-
-    Returns:
-        list: Lista con 5 juegos recomendados similares.
-    """    
-    #if id_de_producto not in listaf6[0]['Id_juego'].to_list():
-        #l=[('Id: ',dff6.Id_juego[a],'Nombre: ',dff6.Nombre[a]) for a in range(len(dff6[['Id_juego','Nombre']]))]
-        #return f'por favor ingrese un id de las siguiente lista:    {l}'
-    #return dff6.juegos[dff6.Id_juego==id_de_producto]
+        l=[('Id: ',dff6.Id_juego[a],'Nombre: ',dff6.Nombre[a]) for a in range(len(dff6[['Id_juego','Nombre']]))]
+        return f'por favor ingrese un id de las siguiente lista:        {l}'
+    return dff6.juegos[dff6.Id_juego==id_de_producto]
