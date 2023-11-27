@@ -216,6 +216,9 @@ def recomendacion_juego( id_de_producto : int):
     Returns:
         list: Lista con 5 juegos recomendados similares.
     """    
+    if id_de_producto not in listaf6[0]['Id_juego'].to_list():
+        l=listaf6[0]['Id_juego'].to_list()
+        return f'Por favor ingrese un id de las siguiente lista:{l}'
     X=dff6.Género.str.get_dummies(', ')
     similitud = cosine_similarity(X)
     similitudes=pd.DataFrame(similitud,index=dff6.Id_juego,columns=dff6.Id_juego)
