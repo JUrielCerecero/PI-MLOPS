@@ -78,5 +78,14 @@ CSV: [Función_sentiment_analysis.csv](https://github.com/JUrielCerecero/PI-MLOP
 ## Despliegue
 
 Una vez desarrollada la API en forma local, se utiliza la plataforma de Render para hacer el despliegue y la API pueda ser consumida desde cualquier dispositivo.
+Se crea un Dockerfile donde se usa la versión 3.11.6 de python, esto porque Render no cuenta con esta versión de python, pero permite usar un contenedor de docker para deployar tus proyectos [Docckerfile](https://github.com/JUrielCerecero/PI-MLOPS/blob/main/Dockerfile)
+En nuestros requirements se pone las librerías que usamos para nuestra API, al usar un Dockerfile tambien nos permite usar las últimas versiones de fastapi, pandas y uvicorn, por lo que dejamos sin especificar la versión en nuestros requirements. [requirements](https://github.com/JUrielCerecero/PI-MLOPS/blob/main/requirements.txt)
+Una vez que tenemos nuestro Dockerfile, y nuestros requirements se deploya todo en la plataforma de Render.
+Este es un pequeño tutorial [Tutorial Render fastapi](https://github.com/HX-FNegrete/render-fastapi-tutorial) de como hacer un deploy sencillo, para hacerlo con Docker, se agrega el dockerfile, como el citado anteriormente, y al tener en tu repositorio de github tu Dockerfile, render automáticamente detecta que usarás Docker, por lo que solo debes seguir los pasos como estan en el tutorial, asegurándote que en vez de que este seleccionado python en la parte de runtime, se seleccione Docker.
 
 - Para consumir la API se encuentra en el siguiente link: [https://pi1-ml.onrender.com/](https://pi1-ml.onrender.com/)
+
+## Video
+
+En el siguiente enlace, podemos ver el video de todo el poryecto, donde se hace un brvee recorrido por todos los pasos del proyecto:
+(enlace)

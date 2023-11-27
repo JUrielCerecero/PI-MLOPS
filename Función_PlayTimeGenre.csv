@@ -1,25 +1,25 @@
-Año,Horas_jugadas,Género
-2016,0,Accounting
-2012,1085700047,Action
-2011,221804836,Adventure
-2015,1345913,Animation & Modeling
-2014,455463,Audio Production
-2015,83950877,Casual
-2012,1930339,Design & Illustration
-2013,118902893,Early Access
-2013,340567,Education
-2013,189185785,Free to Play
-2015,3588,Game Development
-2006,446115272,Indie
-2013,176348445,Massively Multiplayer
-N/D,583513105,N/D
-2014,61659,Photo Editing
-2011,227883593,RPG
-2015,39063164,Racing
-2006,444536391,Simulation
-2014,533535,Software Training
-2015,42861419,Sports
-2013,145471060,Strategy
-2014,2832533,Utilities
-2015,1719365,Video Production
-2012,1930339,Web Publishing
+Año_lanzamiento,Horas_jugadas,Género
+2016,0.0,Accounting
+2012,18320540.88,Action
+2011,3742029.4399999995,Adventure
+2015,22584.94,Animation & Modeling
+2014,7770.740000000001,Audio Production
+2015,1413012.38,Casual
+2012,32457.04,Design & Illustration
+2013,2006104.77,Early Access
+2013,5713.66,Education
+2013,3188247.89,Free to Play
+2015,59.970000000000006,Game Development
+2006,7544550.2,Indie
+2013,2975231.46,Massively Multiplayer
+2014,1027.67,Photo Editing
+2011,3846326.4,RPG
+2015,658570.5,Racing
+2006,7518424.609999999,Simulation
+Sin dato,3008216.88,Sin dato
+2014,9069.67,Software Training
+2015,722780.16,Sports
+2013,2460836.4699999997,Strategy
+2014,47442.28,Utilities
+2015,28809.049999999996,Video Production
+2012,32457.04,Web Publishing
