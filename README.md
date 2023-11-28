@@ -7,14 +7,14 @@ En este proyecto, se pide desarrollar el rol de un ingeniero de datos y de un ci
 
 Se nos proveen 3 datasets para trabajar con ellos y obtener los resultados:
 
-- **steam_games.json.gz**: contiene el id del juego, app_name es el nombre del juego, developer es el desarrollador, publisher es la empresa o empresas que lo publicaron, release_date es la fecha de lanzamiento del juego, url del juego, tags que contiene etiquetas que clasifican los juegos tanto en género como en otras clasificaciones, title es el título del juego, reviews_url tiene el link a las reviews del juego, price es el precio en dólares del juego, early_access es si el juego tiene acceso previo al lanzamiento.
+- **steam_games.json.gz** [steam_games.json.gz](https://github.com/JUrielCerecero/PI-MLOPS/blob/main/steam_games.json.gz): contiene el id del juego, app_name es el nombre del juego, developer es el desarrollador, publisher es la empresa o empresas que lo publicaron, release_date es la fecha de lanzamiento del juego, url del juego, tags que contiene etiquetas que clasifican los juegos tanto en género como en otras clasificaciones, title es el título del juego, reviews_url tiene el link a las reviews del juego, price es el precio en dólares del juego, early_access es si el juego tiene acceso previo al lanzamiento.
 
-- **user_reviews.json.gz**: funny es si les pareció divertido el juego, posted la fecha en que se hizo la review, last_edited cuando se editó la review por última vez, item_id es el id del juego que se está haciendo la review, helpful si a otros usuarios les parece de ayuda la review, recommend si el usuario que publicó la review recomienda el juego, review contiene la review del usuario, user_id contiene el id del usuario que publicó la review.
+- **user_reviews.json.gz** [user_reviews.json.gz](https://github.com/JUrielCerecero/PI-MLOPS/blob/main/user_reviews.json.gz): funny es si les pareció divertido el juego, posted la fecha en que se hizo la review, last_edited cuando se editó la review por última vez, item_id es el id del juego que se está haciendo la review, helpful si a otros usuarios les parece de ayuda la review, recommend si el usuario que publicó la review recomienda el juego, review contiene la review del usuario, user_id contiene el id del usuario que publicó la review.
 
-- **users_items.json.gz**: item_id es el id del juego, item_name es el nombre del juego, playtime_forever son los minutos acumulados que lleva el usuario para ese juego, playtime_2weeks son los minutos jugados en las últimas 2 semanas para el juego dado, user_id es el id del usuario de los datos citados previamente.
+- **users_items.json.gz** [users_items.json.gz](https://github.com/JUrielCerecero/PI-MLOPS/blob/main/users_items.json.gz): item_id es el id del juego, item_name es el nombre del juego, playtime_forever son los minutos acumulados que lleva el usuario para ese juego, playtime_2weeks son los minutos jugados en las últimas 2 semanas para el juego dado, user_id es el id del usuario de los datos citados previamente.
 
 ## ETL
-
+Primero se descomprimieron con Winrar, para sacar los archivos, ya que dos de ellos no se podían leer con pandas directamente, sin embargo, se puede optar por otros medios.
 Se realizó la limpieza de los datasets quitando las filas nulas, también las columnas que no nos servían para las funciones requeridas, se quitaron valores duplicados y a través de webscraping se trató de obtener los valores nulos faltantes en algunas partes. Se imputaron valores nulos en algunos datos, en otros se cambiaron por el valor 'N/D' para no afectar la integridad de los datos que podían ser útiles para algunas funciones. Se normalizaron las fechas a modo de solo tener el año, al igual que algunas se obtuvieron con webscraping.
 
 Una vez limpios y transformados los datos para nuestros requerimientos, se guardaron en un CSV para uso posterior.
@@ -92,4 +92,4 @@ Este es un pequeño tutorial [Tutorial Render fastapi](https://github.com/HX-FNe
 ## Video
 
 En el siguiente enlace, podemos ver el video de todo el poryecto, donde se hace un brvee recorrido por todos los pasos del proyecto:
-[video proyecto]
+[Video proyecto](https://youtu.be/rSU-dbJQD-4)
