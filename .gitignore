@@ -150,15 +150,8 @@ cython_debug/
 #  and can be added to the global gitignore or merged into this file.  For a more nuclear
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
-user_reviews.json.gz
+Readmeconconsignas.md
+modelo 2.ipynb
 australian_user_reviews.json
 australian_users_items.json
-Diccionario de Datos STEAM.xlsx
 items_por_usuario.csv
-Juegos_steam.csv
-output_steam_games.json
-Readmeconconsignas.md
-revies_por_usuario.csv
-steam_games.json.gz
-users_items.json.gz
-modelo 2.ipynb
