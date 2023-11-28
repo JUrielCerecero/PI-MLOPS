@@ -25,6 +25,9 @@ El ETL se realizó en un solo Jupyter notebook; para verlo de forma detallada, s
 
 ## EDA
 
+Se realizó un EDa, donde se vieron los principales descurbrimientos estadísticos sobre los datos que se nos piden en las cosignas, dándonos un panorama más amplio sobre como están organizados los datos de los datasets.
+se utilizaron las librerías de seborn, maptplotlib y plotly.
+
 # Modelo de recomendación
 
 Se opta por usar un modelo de recomendación item-item, donde se ingresa un id de un videojuego, y basado en un modelo de similitud del coseno que busca las similitudes de los vectores, vectorizando cada palabra, en este caso los géneros. Se obtienen juegos donde hay géneros similares. Se utilizó la librería de scikit learn para usar este modelo; se usaron dummies de los géneros, ya que era más efectivo en este caso porque algunos géneros constaban con expresiones regulares y al usar dummies solo se contaban los géneros.

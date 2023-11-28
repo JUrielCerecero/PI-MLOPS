@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 import pandas as pd
-from sklearn.metrics.pairwise import cosine_similarity
+
 
 app = FastAPI()
 
