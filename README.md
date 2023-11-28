@@ -27,6 +27,7 @@ El ETL se realizó en un solo Jupyter notebook; para verlo de forma detallada, s
 
 Se realizó un EDa, donde se vieron los principales descurbrimientos estadísticos sobre los datos que se nos piden en las cosignas, dándonos un panorama más amplio sobre como están organizados los datos de los datasets.
 se utilizaron las librerías de seborn, maptplotlib y plotly.
+El archivo se ecncuentr en este enlace [EDA](https://github.com/JUrielCerecero/PI-MLOPS/blob/main/EDA.ipynb)
 
 # Modelo de recomendación
 
